@@ -1,0 +1,97 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bgGrad" cx="38%" cy="32%" r="80%">
+      <stop offset="0%" stop-color="#1B2050"/>
+      <stop offset="55%" stop-color="#12163A"/>
+      <stop offset="100%" stop-color="#080A18"/>
+    </radialGradient>
+
+    <radialGradient id="planetGrad" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFE7B3"/>
+      <stop offset="45%" stop-color="#F2C572"/>
+      <stop offset="100%" stop-color="#C98A3B"/>
+    </radialGradient>
+
+    <radialGradient id="sunGrad" cx="45%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="45%" stop-color="#FFE7B3"/>
+      <stop offset="100%" stop-color="#F2A94A"/>
+    </radialGradient>
+
+    <linearGradient id="handGrad" x1="256" y1="256" x2="446" y2="256" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFE7B3" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#F2C572" stop-opacity="1"/>
+    </linearGradient>
+
+    <filter id="softGlow" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="sunGlow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+
+    <clipPath id="roundedSquare">
+      <rect x="8" y="8" width="496" height="496" rx="110" ry="110"/>
+    </clipPath>
+  </defs>
+
+  <rect x="8" y="8" width="496" height="496" rx="110" ry="110" fill="url(#bgGrad)"/>
+
+  <g clip-path="url(#roundedSquare)">
+
+    <!-- stopwatch crown -->
+    <rect x="240" y="24" width="32" height="16" rx="7" fill="#2A2F63"/>
+    <rect x="246" y="12" width="20" height="14" rx="6" fill="#3A3F7A"/>
+
+    <!-- outer bezel -->
+    <circle cx="256" cy="256" r="200" fill="none" stroke="#3A3F7A" stroke-opacity="0.6" stroke-width="6"/>
+
+    <!-- faint orbit rings -->
+    <circle cx="256" cy="256" r="160" fill="none" stroke="#7C6FF0" stroke-opacity="0.3" stroke-width="2"/>
+    <circle cx="256" cy="256" r="115" fill="none" stroke="#7C6FF0" stroke-opacity="0.25" stroke-width="2"/>
+    <circle cx="256" cy="256" r="70"  fill="none" stroke="#7C6FF0" stroke-opacity="0.22" stroke-width="2"/>
+
+    <!-- decorative planets riding the inner orbits (slow independent drift) -->
+    <circle cx="256" cy="96" r="5" fill="#8FDAD5" opacity="0.8">
+      <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="22s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="141" cy="341" r="6" fill="#C9A6F2" opacity="0.75">
+      <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="-360 256 256" dur="16s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="326" cy="326" r="4" fill="#F2C572" opacity="0.7">
+      <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="10s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- 12/3/6/9 ticks -->
+    <g fill="#CFE9E6">
+      <circle cx="256" cy="60"  r="6" opacity="0.9"/>
+      <circle cx="256" cy="452" r="6" opacity="0.6"/>
+      <circle cx="60"  cy="256" r="6" opacity="0.6"/>
+      <circle cx="452" cy="256" r="6" opacity="0.9"/>
+    </g>
+
+    <!-- progress ring: fills in as the hand sweeps around -->
+    <circle cx="256" cy="256" r="190" fill="none" stroke="url(#handGrad)" stroke-opacity="0.85"
+            stroke-width="10" stroke-dasharray="1194" transform="rotate(-90 256 256)">
+      <animate attributeName="stroke-dashoffset" values="1194;0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- sun pivot -->
+    <circle cx="256" cy="256" r="22" fill="url(#sunGrad)" filter="url(#sunGlow)"/>
+    <circle cx="256" cy="256" r="17" fill="url(#sunGrad)"/>
+
+    <!-- hand + planet: one rotating group -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="8s" repeatCount="indefinite"/>
+      <line x1="256" y1="256" x2="256" y2="66" stroke="url(#handGrad)" stroke-width="7"
+            stroke-linecap="round" filter="url(#softGlow)"/>
+      <circle cx="256" cy="66" r="18" fill="url(#planetGrad)" filter="url(#softGlow)"/>
+      <circle cx="256" cy="66" r="18" fill="none" stroke="#FFF3D6" stroke-opacity="0.5" stroke-width="1"/>
+    </g>
+  </g>
+
+  <rect x="8" y="8" width="496" height="496" rx="110" ry="110"
+        fill="none" stroke="#4A4FA8" stroke-opacity="0.35" stroke-width="2"/>
+</svg>

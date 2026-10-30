@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" >
+        <style>
+            h1 {
+            font-family: 'Tangerine', serif;
+            font-size: 50px;
+             }
+            .appIcon {
+                cursor:pointer; padding-top: 5px; padding-bottom: 3px; padding-left: 5px; padding-right: 5.5px; font-weight: 700; background-color: rgba(255, 255, 255, 0.75); border-radius: 16px; position: absolute; width: fit-to-content; height: fit-to-content
+            }
+            .selected{
+                background-color: rgba(255, 255, 255, 1)
+            }
+            .display{
+            display:none;
+            }
+            .window{
+
+            }
+        </style>
+    <body style="background-image: url(https://science.nasa.gov/wp-content/uploads/2023/06/webb-flickr-52259221868-30e1c78f0c-4k-jpg.webp)">
+
+        <div id="bartop" style="
+        display: flex;
+        background-color: white;
+        justify-content: flex-start;
+        color: black;
+        padding: 5px;
+        transform: translate(-0.5%, -15%);
+        width: 1500px;
+        z-index: 1000">
+            <p id="welcomeopen" style="cursor: pointer; margin-left: 16px; font-weight: 700; background-color: rgba(0, 0, 0, 0.125); padding: 4px 12px; border-radius: 16px;">
+                GUJJIOS
+            </p>
+            <p id="timeElement" style="margin-left: 16px; font-weight: 700; background-color: rgba(0, 0, 0, 0.125); padding: 4px 12px; border-radius: 16px;">
+              Time
+            </p>
+        </div>
+
+        <div id="welcome" class="window" style="border:2mm ridge rgb(111 255 100 / 0.75);
+         background-color: #ADD8E6;
+         padding: 20px; border-radius: 14px;
+         width: fit-content;
+         height: 300px;
+         position: absolute;
+         top:50%; left:50%;
+         transform: translate(-50%, -50%);">
+
+            <p id="welcomeheader" style="margin-center: 16px;
+            background-color: rgba(255, 255, 255, 0.25);
+            padding: 4px 12px;
+            border-radius: 16px;
+            position: absolute;
+            transform: translate(-20%, -130%);
+            width: fit-to-content;
+            cursor: pointer">
+                DRAG
+            </p>
+
+            <p style="cursor: pointer; margin-center: 16px;
+            background-color: rgba(255, 255, 255, 0.25);
+            padding: 4px 12px;
+            border-radius: 16px;
+            position: absolute;
+            transform: translate(410%, -130%);
+            width: fit-to-content;" id="welcomeclose">
+                CLOSE
+            </p>
+
+            <h1> Welcome to GOS</h1>
+            <p> My name is Tapasmita</p>
+            <h2><b> A bit about myself:</b></h2>
+            <p><b> 1)</b> I love astrophysics <br><b> 2)</b> I love to play basketball<br><b> 3)</b> I love discovering and learning about new things.</p>
+            <a href="https://www.instagram.com/taps_1256/?hl=en"> My Instagram </a>
+        </div>
+
+        <div id="desktopapps" class="appIcon">
+            <img src="images/bloget.png" style="width: 64px; height: 64px; border-radius: 16px">
+            <p style="text-align: center; margin-top: 0; margin-bottom: 0">BlogEt</p>
+        </div>
+
+        <div id="bloget" class="window display" style="border:2mm ridge rgb(111 255 100 / 0.75);
+         background-color: white;
+         padding: 20px; border-radius: 14px;
+         width: 315px;
+         height: auto;
+         position: absolute;
+         top:50%; left:50%;
+         transform: translate(-50%, -50%);">
+            <div>
+                <p id="blogetheader" style="margin-center: 16px;
+                background-color: rgba(0, 0, 0, 0.25);
+                padding: 4px 12px;
+                border-radius: 16px;
+                position: absolute;
+                transform: translate(-20%, -130%);
+                width: fit-to-content;
+                cursor: pointer">
+                DRAG
+                </p>
+
+                <p style="cursor: pointer; margin-center: 16px;
+                background-color: rgba(0, 0, 0, 0.25);
+                padding: 4px 12px;
+                border-radius: 16px;
+                position: absolute;
+                transform: translate(340%, -130%);
+                width: fit-to-content;" id="blogetclose">
+                    CLOSE
+                </p>
+            </div>
+
+            <h1>BlogEt</h1>
+            <br>
+            <textarea style="height:300px; width: 315px">Blog as you go
+                Start writing here->
+            </textarea>
+            <br>
+            <button style="background-color: darkblue; color: white; cursor: pointer">SAVE!</button>
+        </div>
+
+        <div id="desktopapps" class="appIcon" style="position: absolute; transform: translate(0%, 125%);">
+            <img src="images/timerapp.svg" style="width: 64px; height: 64px; border-radius: 16px; ">
+            <p style="text-align: center; margin-top: 0; margin-bottom: 0; ">T-MINUS</p>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
